@@ -54,42 +54,55 @@ export default function Dados() {
   };
 
   return (
-    <>
+    <div className="conteiner">
       <Cabecalho titulo="Dados" voltarPara="/endereco" />
-      <form className={`${comum.formulario} ${comum.comRodape}`} noValidate onSubmit={(e) => { e.preventDefault(); avancar(); }}>
-        <Campo rotulo="Nome" placeholder="ex: José da Silva" autoComplete="name" {...props("nome")} />
-        <Campo
-          rotulo="Telefone"
-          type="tel"
-          placeholder="ex: (84) 99834-9412"
-          autoComplete="tel"
-          {...props("telefone", { transformar: mascaraTelefone })}
-        />
-        <Campo rotulo="Forma de pagamento" opcoes={CONFIG.formasPagamento} {...props("pagamento")} />
+      <div className={comum.colunas}>
+        <form
+          className={`${comum.formulario} ${comum.comRodape}`}
+          noValidate
+          onSubmit={(e) => {
+            e.preventDefault();
+            avancar();
+          }}
+        >
+          <div className={comum.duasColunas}>
+            <Campo rotulo="Nome" placeholder="ex: José da Silva" autoComplete="name" {...props("nome")} />
+            <Campo
+              rotulo="Telefone"
+              type="tel"
+              placeholder="ex: (84) 99834-9412"
+              autoComplete="tel"
+              {...props("telefone", { transformar: mascaraTelefone })}
+            />
+          </div>
+          <Campo rotulo="Forma de pagamento" opcoes={CONFIG.formasPagamento} {...props("pagamento")} />
 
-        {cliente.pagamento === "Dinheiro" && (
-          <Campo rotulo="Troco para" opcional placeholder="R$ 50,00" inputMode="decimal" {...props("troco")} />
-        )}
+          {cliente.pagamento === "Dinheiro" && (
+            <Campo rotulo="Troco para" opcional placeholder="R$ 50,00" inputMode="decimal" {...props("troco")} />
+          )}
 
-        {cliente.pagamento === "Pix" && (
-          <>
-            <Grupo rotulo="Chave Pix:">
-              <div className={styles.pix}>
-                <div>
-                  <strong>{CONFIG.pix.chave}</strong>
-                  <small>{CONFIG.pix.titular}</small>
+          {cliente.pagamento === "Pix" && (
+            <>
+              <Grupo rotulo="Chave Pix:">
+                <div className={styles.pix}>
+                  <div>
+                    <strong>{CONFIG.pix.chave}</strong>
+                    <small>{CONFIG.pix.titular}</small>
+                  </div>
+                  <Botao variante="copiar" onClick={copiarPix}>
+                    Copiar
+                  </Botao>
                 </div>
-                <Botao variante="copiar" onClick={copiarPix}>Copiar</Botao>
+              </Grupo>
+              <div className={styles.importante}>
+                <strong>Importante</strong>
+                Enviar o comprovante no WhatsApp
               </div>
-            </Grupo>
-            <div className={styles.importante}>
-              <strong>Importante</strong>
-              Enviar o comprovante no WhatsApp
-            </div>
-          </>
-        )}
-      </form>
-      <RodapeTotal textoBotao="Avançar" onAvancar={avancar} />
-    </>
+            </>
+          )}
+        </form>
+        <RodapeTotal textoBotao="Avançar" onAvancar={avancar} />
+      </div>
+    </div>
   );
 }

@@ -17,6 +17,10 @@
   text-align: center;
 }
 
+@media (min-width: 900px) {
+  .aviso { bottom: 32px; }
+}
+
 .visivel {
   opacity: 1;
   transform: translate(-50%, 0);

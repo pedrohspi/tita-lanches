@@ -13,32 +13,34 @@ export default function Carrinho() {
 
   if (carrinho.length === 0) {
     return (
-      <>
+      <div className="conteiner">
         <Cabecalho titulo="Carrinho" voltarPara="/cardapio" />
         <section className={comum.vazio}>
           <p>Seu carrinho está vazio.</p>
           <Botao para="/cardapio">Ver cardápio</Botao>
         </section>
-      </>
+      </div>
     );
   }
 
   return (
-    <>
+    <div className="conteiner">
       <Cabecalho titulo="Carrinho" voltarPara="/cardapio" />
-      <section className={`${comum.lista} ${comum.comRodape}`}>
-        {carrinho.map((item) => (
-          <CardProduto
-            key={item.uid}
-            item={item}
-            preco={totalDoItem(item)}
-            acao={<Botao variante="remover" onClick={() => remover(item.uid)}>Remover</Botao>}
-          >
-            <DetalhesItem item={item} />
-          </CardProduto>
-        ))}
-      </section>
-      <RodapeTotal textoBotao="Avançar" onAvancar={() => navegar("/endereco")} />
-    </>
+      <div className={comum.colunas}>
+        <section className={`${comum.lista} ${comum.comRodape}`}>
+          {carrinho.map((item) => (
+            <CardProduto
+              key={item.uid}
+              item={item}
+              preco={totalDoItem(item)}
+              acao={<Botao variante="remover" onClick={() => remover(item.uid)}>Remover</Botao>}
+            >
+              <DetalhesItem item={item} />
+            </CardProduto>
+          ))}
+        </section>
+        <RodapeTotal textoBotao="Avançar" onAvancar={() => navegar("/endereco")} />
+      </div>
+    </div>
   );
 }

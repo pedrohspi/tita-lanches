@@ -27,27 +27,31 @@ export default function Cardapio() {
   return (
     <>
       <nav className={styles.abas}>
-        {categorias.map((c) => (
-          <button
-            key={c.id}
-            className={`${styles.aba} ${c.id === atual?.id ? styles.ativa : ""}`}
-            onClick={() => setCategoriaId(c.id)}
-          >
-            {c.nome}
-          </button>
-        ))}
+        <div className={`conteiner ${styles.abasInterno}`}>
+          {categorias.map((c) => (
+            <button
+              key={c.id}
+              className={`${styles.aba} ${c.id === atual?.id ? styles.ativa : ""}`}
+              onClick={() => setCategoriaId(c.id)}
+            >
+              {c.nome}
+            </button>
+          ))}
+        </div>
       </nav>
 
-      <section className={comum.lista}>
-        {atual?.itens.map((item) => (
-          <CardProduto
-            key={item.id}
-            item={item}
-            acao={<Botao onClick={() => setSelecionado(item)}>Comprar</Botao>}
-          />
-        ))}
-        {!atual && <p className={comum.vazio}>Cardápio indisponível no momento.</p>}
-      </section>
+      <div className="conteiner">
+        <section className={`${comum.lista} ${comum.grade}`}>
+          {atual?.itens.map((item) => (
+            <CardProduto
+              key={item.id}
+              item={item}
+              acao={<Botao onClick={() => setSelecionado(item)}>Comprar</Botao>}
+            />
+          ))}
+          {!atual && <p className={comum.vazio}>Cardápio indisponível no momento.</p>}
+        </section>
+      </div>
 
       {selecionado && (
         <ModalAdicionais

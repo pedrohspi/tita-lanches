@@ -14,7 +14,8 @@
   --fonte-titulo: "Poppins", system-ui, sans-serif;
   --fonte-texto: "Inter", system-ui, sans-serif;
 
-  --largura: 480px;
+  --largura-celular: 480px;
+  --largura-maxima: 1200px;
   --altura-topo: 104px;
   --altura-topo-compacto: 72px;
   --altura-menu: 72px;
@@ -40,11 +41,29 @@ a { color: inherit; }
 button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 img { display: block; max-width: 100%; }
 
-/* O app ocupa no máximo a largura de um celular, centralizado no computador */
-.largura-app {
+/*
+ * Celular (até 899px): layout do Figma, coluna única com no máximo 480px.
+ * Computador (900px+): layout largo, conteúdo centralizado em até 1200px.
+ */
+.conteiner {
   width: 100%;
-  max-width: var(--largura);
   margin-inline: auto;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --altura-topo: 84px;
+    --altura-topo-compacto: 84px;
+    --altura-menu: 0px;
+    --altura-rodape: 0px;
+  }
+
+  body { background: #f6f3ef; }
+
+  .conteiner {
+    max-width: var(--largura-maxima);
+    padding-inline: 32px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

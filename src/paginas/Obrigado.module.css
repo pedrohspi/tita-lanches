@@ -18,3 +18,16 @@
 .obrigado p { color: var(--cinza); font-size: 0.9rem; }
 
 .entregador { width: min(280px, 80%); }
+
+@media (min-width: 900px) {
+  .obrigado {
+    max-width: 640px;
+    margin: 48px auto 0;
+    background: var(--branco);
+    border-radius: var(--raio);
+    border: 1.5px solid #e2ddd7;
+    padding: 56px 48px;
+  }
+
+  .obrigado h1 { max-width: none; }
+}

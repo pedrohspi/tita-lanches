@@ -17,5 +17,21 @@
   place-items: center;
   width: 44px;
   height: 44px;
+  border-radius: 10px;
 }
 .voltar svg { width: 30px; height: 30px; }
+
+@media (min-width: 900px) {
+  .cabecalho {
+    display: flex;
+    gap: 12px;
+    padding: 32px 0 24px;
+  }
+
+  .cabecalho h1 {
+    text-align: left;
+    font-size: 2rem;
+  }
+
+  .voltar:hover { background: rgba(0, 0, 0, 0.06); }
+}

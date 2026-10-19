@@ -1,15 +1,18 @@
 .abas {
-  display: flex;
-  gap: 28px;
   background: var(--preto);
-  padding: 0 20px;
-  overflow-x: auto;
-  scrollbar-width: none;
   position: sticky;
   top: var(--altura-topo);
   z-index: 10;
 }
-.abas::-webkit-scrollbar { display: none; }
+
+.abasInterno {
+  display: flex;
+  gap: 28px;
+  padding: 0 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.abasInterno::-webkit-scrollbar { display: none; }
 
 .aba {
   color: var(--branco);
@@ -23,3 +26,15 @@
 }
 
 .ativa { border-bottom-color: var(--laranja); }
+
+@media (min-width: 900px) {
+  .abas {
+    background: #1a1a1a;
+    border-top: 1px solid #2a2a2a;
+  }
+
+  .abasInterno { gap: 36px; padding-inline: 32px; }
+
+  .aba { padding: 14px 0 12px; }
+  .aba:hover:not(.ativa) { color: var(--laranja); }
+}

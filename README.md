@@ -8,6 +8,11 @@ Cardápio digital com pedido pelo WhatsApp. Feito em React + Vite, sem backend e
 2. Preenche endereço, dados e forma de pagamento.
 3. Ao finalizar, o WhatsApp abre com a mensagem do pedido pronta para enviar à loja.
 
+## Layouts
+
+- **Celular (até 899px):** segue o layout do Figma, com menu fixo embaixo.
+- **Computador (900px ou mais):** menu no topo, cardápio em grade e painel lateral com o total do pedido.
+
 ## Rodando localmente
 
 ```bash
@@ -32,7 +37,7 @@ src/
 │   └── useFormularioCliente.js
 ├── utils/
 │   └── pedido.js             # preços, frete e mensagem do WhatsApp
-├── components/               # Botao, CardProduto, ModalAdicionais, Campo, RodapeTotal...
+├── components/               # Botao, CardProduto, ModalAdicionais, Navegacao, RodapeTotal...
 └── paginas/                  # Inicio, Cardapio, Carrinho, Endereco, Dados, Resumo, Obrigado
 public/
 └── img/lanches/              # fotos dos lanches (padrao.svg = imagem provisória)

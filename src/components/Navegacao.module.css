@@ -1,0 +1,76 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco);
+  text-decoration: none;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ativo { color: var(--laranja); }
+
+.icone { position: relative; display: block; }
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: var(--vermelho);
+  color: var(--branco);
+  font: 700 0.75rem var(--fonte-titulo);
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  padding: 0 5px;
+}
+
+/* ---------- celular: barra fixa embaixo ---------- */
+
+.inferior {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: var(--largura-celular);
+  margin-inline: auto;
+  height: calc(var(--altura-menu) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--preto);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  z-index: 30;
+}
+
+.inferior .item {
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.85rem;
+}
+.inferior .item svg { width: 34px; height: 34px; }
+
+/* ---------- computador: menu no topo ---------- */
+
+.topo {
+  display: none;
+  gap: 8px;
+}
+
+.topo .item {
+  gap: 8px;
+  font-size: 0.95rem;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transition: background 0.15s, color 0.15s;
+}
+.topo .item:hover { background: rgba(255, 255, 255, 0.08); }
+.topo .item svg { width: 24px; height: 24px; }
+
+@media (min-width: 900px) {
+  .inferior { display: none; }
+  .topo { display: flex; }
+}

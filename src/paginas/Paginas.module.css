@@ -7,7 +7,7 @@
   padding: 20px 16px;
 }
 
-/* Espaço para a barra de total fixa no rodapé */
+/* Espaço para a barra de total fixa no rodapé (celular) */
 .comRodape { padding-bottom: calc(var(--altura-rodape) + 24px); }
 
 .formulario {
@@ -32,4 +32,60 @@
   color: var(--laranja-escuro);
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+/* ---------- computador ---------- */
+
+@media (min-width: 900px) {
+  /* Conteúdo à esquerda, painel do pedido à direita */
+  .colunas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .lista {
+    padding: 0;
+  }
+
+  /* Cards do cardápio em grade */
+  .grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+    padding: 32px 0 0;
+  }
+
+  .comRodape { padding-bottom: 0; }
+
+  .formulario {
+    padding: 28px;
+    gap: 20px;
+    background: var(--branco);
+    border: 1.5px solid var(--borda);
+    border-radius: var(--raio);
+  }
+
+  /* Campos lado a lado no formulário */
+  .duasColunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .vazio {
+    background: var(--branco);
+    border-radius: var(--raio);
+    padding: 64px 16px;
+  }
+}
+
+/* No celular, campos lado a lado viram coluna */
+@media (max-width: 899px) {
+  .duasColunas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }

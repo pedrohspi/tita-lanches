@@ -1,8 +1,13 @@
+/* ---------- celular: barra fixa acima do menu ---------- */
+
 .rodape {
   position: fixed;
   left: 0;
   right: 0;
   bottom: calc(var(--altura-menu) + env(safe-area-inset-bottom));
+  width: 100%;
+  max-width: var(--largura-celular);
+  margin-inline: auto;
   min-height: var(--altura-rodape);
   background: var(--branco);
   border-top: 1.5px solid var(--borda);
@@ -13,6 +18,10 @@
   padding: 10px 16px;
   z-index: 15;
 }
+
+/* Título e linhas de detalhe só aparecem no computador */
+.titulo,
+.linhas { display: none; }
 
 .valores { display: flex; flex-direction: column; }
 
@@ -31,4 +40,50 @@
 
 @media (max-width: 360px) {
   .botao { font-size: 1.1rem; padding: 10px 18px; }
+}
+
+/* ---------- computador: painel lateral ---------- */
+
+@media (min-width: 900px) {
+  .rodape {
+    position: sticky;
+    top: calc(var(--altura-topo) + 24px);
+    bottom: auto;
+    max-width: none;
+    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 24px;
+    border: 1.5px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  .titulo {
+    display: block;
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .linhas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .linhas p {
+    display: flex;
+    justify-content: space-between;
+    color: var(--cinza);
+    font-size: 0.95rem;
+  }
+
+  .frete { display: none; }
+
+  .valores strong { font-size: 1.5rem; }
+
+  .botao { width: 100%; padding: 14px; }
 }

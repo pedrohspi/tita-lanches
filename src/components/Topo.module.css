@@ -1,11 +1,22 @@
 .topo {
   background: var(--preto);
-  height: var(--altura-topo);
-  display: grid;
-  place-items: center;
   position: sticky;
   top: 0;
   z-index: 20;
+}
+
+.interno {
+  height: var(--altura-topo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
 }
 
 .logo {
@@ -15,5 +26,31 @@
   object-fit: cover;
 }
 
-.compacto { height: var(--altura-topo-compacto); }
+/* No celular o nome já está no logo; no computador aparece ao lado. */
+.nome { display: none; }
+
+.compacto .interno { height: var(--altura-topo-compacto); }
 .compacto .logo { width: 54px; height: 54px; }
+
+@media (min-width: 900px) {
+  .interno,
+  .compacto .interno {
+    height: var(--altura-topo);
+    justify-content: space-between;
+  }
+
+  .logo,
+  .compacto .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .nome {
+    display: block;
+    color: var(--laranja);
+    font-family: var(--fonte-titulo);
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+  }
+}

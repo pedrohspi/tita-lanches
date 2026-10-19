@@ -1,5 +1,17 @@
 .conteudo {
+  width: 100%;
+  max-width: var(--largura-celular);
+  margin-inline: auto;
   background: var(--branco);
   min-height: calc(100dvh - var(--altura-topo-compacto));
   padding-bottom: calc(var(--altura-menu) + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 900px) {
+  .conteudo {
+    max-width: none;
+    background: transparent;
+    min-height: calc(100dvh - var(--altura-topo));
+    padding-bottom: 64px;
+  }
 }
