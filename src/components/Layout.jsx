@@ -18,7 +18,15 @@ export default function Layout() {
   return (
     <>
       <Topo compacto={!TOPO_GRANDE.includes(pathname)} />
-      <main className={styles.conteudo}>
+      <main
+        className={[
+          styles.conteudo,
+          TOPO_GRANDE.includes(pathname) && styles.topoGrande,
+          pathname === "/" && styles.inicio,
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
         {/* key: ao trocar de tela, um erro anterior é descartado */}
         <LimiteErro key={pathname}>
           <Outlet />

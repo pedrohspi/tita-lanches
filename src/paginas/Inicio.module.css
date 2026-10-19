@@ -1,11 +1,15 @@
 .inicio {
+  /* Ocupa toda a altura livre entre o topo e o menu */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   background: radial-gradient(ellipse at 50% 55%, #4a3b33 0%, #241c18 55%, #120e0c 100%);
   overflow: hidden;
 }
 
 /* Celular: título, foto e botão empilhados */
 .interno {
-  min-height: calc(100dvh - var(--altura-topo) - var(--altura-menu));
+  flex: 1;
   display: grid;
   grid-template-areas:
     "titulo"
@@ -50,8 +54,6 @@
   }
 
   .interno {
-    min-height: calc(100dvh - var(--altura-topo) - 64px);
-    max-height: 760px;
     grid-template-areas:
       "titulo foto"
       "sub    foto"
