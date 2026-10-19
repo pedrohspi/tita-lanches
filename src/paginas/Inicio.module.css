@@ -3,8 +3,32 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: radial-gradient(ellipse at 50% 55%, #4a3b33 0%, #241c18 55%, #120e0c 100%);
+  position: relative;
+  isolation: isolate;
   overflow: hidden;
+  background: #120e0c;
+}
+
+/* Camada 1: a foto do lanche ampliada e desfocada */
+.inicio::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  z-index: -2;
+  background: var(--fundo) center / cover no-repeat;
+  filter: blur(14px) saturate(1.2);
+  transform: scale(1.1);
+}
+
+/* Camada 2: escurece e aquece o fundo para o texto e a foto se destacarem */
+.inicio::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 55%, rgba(255, 165, 0, 0.18) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(10, 7, 5, 0.82) 0%, rgba(10, 7, 5, 0.55) 45%, rgba(10, 7, 5, 0.88) 100%);
 }
 
 /* Celular: título, foto e botão empilhados */
@@ -38,19 +62,25 @@
 
 .foto {
   grid-area: foto;
-  width: min(420px, 112%);
-  max-width: none;
+  width: min(340px, 86%);
+  aspect-ratio: 1;
+  object-fit: cover;
   margin: 24px 0;
-  border-radius: 24px;
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+  border-radius: 28px;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.55),
+    0 0 0 8px rgba(255, 165, 0, 0.18);
 }
 
 .acao { grid-area: acao; }
 
 /* Computador: texto à esquerda, foto à direita */
 @media (min-width: 900px) {
-  .inicio {
-    background: radial-gradient(ellipse at 75% 50%, #4a3b33 0%, #241c18 50%, #120e0c 100%);
+  .inicio::after {
+    background:
+      radial-gradient(ellipse at 75% 50%, rgba(255, 165, 0, 0.2) 0%, transparent 55%),
+      linear-gradient(90deg, rgba(10, 7, 5, 0.9) 0%, rgba(10, 7, 5, 0.65) 55%, rgba(10, 7, 5, 0.5) 100%);
   }
 
   .interno {
@@ -75,7 +105,7 @@
   .sub {
     display: block;
     grid-area: sub;
-    color: #e8e0d8;
+    color: #eee5dc;
     font-size: 1.15rem;
     line-height: 1.6;
     max-width: 44ch;
@@ -85,9 +115,16 @@
   .acao { align-self: start; }
 
   .foto {
-    width: 100%;
-    max-width: 520px;
+    width: min(460px, 100%);
     justify-self: center;
     margin: 0;
   }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .foto { animation: surgir 0.6s ease-out both; }
+}
+
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
 }

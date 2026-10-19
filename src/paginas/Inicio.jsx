@@ -1,11 +1,14 @@
 import Botao from "../components/Botao";
 import styles from "./Inicio.module.css";
 
-const FOTO = `${import.meta.env.BASE_URL}img/lanches/padrao.svg`;
+const BASE = import.meta.env.BASE_URL;
+// Foto de fundo (desfocada) e foto em destaque (nítida).
+const FUNDO = `${BASE}img/inicio.jpg`;
+const DESTAQUE = `${BASE}img/lanches/foto-4.jpg`;
 
 export default function Inicio() {
   return (
-    <section className={styles.inicio}>
+    <section className={styles.inicio} style={{ "--fundo": `url(${FUNDO})` }}>
       <div className={`conteiner ${styles.interno}`}>
         <h1 className={styles.chamada}>
           O lanche perfeito,
@@ -15,7 +18,7 @@ export default function Inicio() {
         <p className={styles.sub}>
           Monte seu pedido, escolha os adicionais e receba em casa. O pedido vai direto para o nosso WhatsApp.
         </p>
-        <img className={styles.foto} src={FOTO} alt="" />
+        <img className={styles.foto} src={DESTAQUE} alt="Lanche da Tita Lanches" fetchPriority="high" />
         <div className={styles.acao}>
           <Botao para="/cardapio" tamanho="grande">Saiba mais</Botao>
         </div>
