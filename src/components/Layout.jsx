@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import LimiteErro from "./LimiteErro";
 import Topo from "./Topo";
 import MenuInferior from "./MenuInferior";
 import styles from "./Layout.module.css";
@@ -16,7 +17,10 @@ export default function Layout() {
     <>
       <Topo compacto={!TOPO_GRANDE.includes(pathname)} />
       <main className={`largura-app ${styles.conteudo}`}>
-        <Outlet />
+        {/* key: ao trocar de tela, um erro anterior é descartado */}
+        <LimiteErro key={pathname}>
+          <Outlet />
+        </LimiteErro>
       </main>
       <MenuInferior />
     </>

@@ -1,0 +1,41 @@
+.erro {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  padding: 48px 24px;
+  text-align: center;
+  background: var(--branco);
+  min-height: 60dvh;
+}
+
+.erro h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+}
+
+.erro p { color: var(--cinza); }
+
+.botao {
+  background: var(--laranja);
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 10px;
+}
+
+.erro details {
+  width: 100%;
+  text-align: left;
+  font-size: 0.8rem;
+  color: var(--cinza);
+}
+
+.erro pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-top: 8px;
+  padding: 12px;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
