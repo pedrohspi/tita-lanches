@@ -26,11 +26,11 @@ export const CARDAPIO = [
       { id: "barao", nome: "Barão", preco: 18.0, descricao: "Hambúrguer, frango desfiado, ovo, bacon, salsicha, queijo, presunto e salada", imagem: "foto-2.jpg" },
       { id: "t-burguer", nome: "T-Burguer", preco: 16.0, descricao: "3 hambúrgueres, ovo, salsicha, queijo, presunto e salada", imagem: "foto-3.jpg" },
       { id: "calafrango", nome: "Calafrango", preco: 15.0, descricao: "Hambúrguer, frango desfiado, calabresa, ovo, queijo, presunto e salada", imagem: "foto-6.jpg" },
-      { id: "francatupiry", nome: "Francatupiry", preco: 14.0, descricao: "Hambúrguer, frango desfiado, catupiry, queijo, presunto e salada", imagem: "foto-5.jpg" },
+      { id: "francatupiry", nome: "Francatupiry", preco: 14.0, descricao: "Hambúrguer, frango desfiado, catupiry, queijo, presunto e salada", imagem: "foto-2.jpg" },
       { id: "tita-lanches", nome: "Tita Lanches", preco: 13.0, descricao: "Hambúrguer, frango desfiado, ovo, queijo, presunto e salada", imagem: "foto-7.jpg" },
       { id: "duplo", nome: "Duplo", preco: 13.0, descricao: "2 hambúrgueres, salsicha, queijo, presunto e salada", imagem: "foto-3.jpg" },
       { id: "bacon", nome: "Bacon", preco: 12.0, descricao: "Hambúrguer, bacon, queijo, presunto e salada", imagem: "foto-1.jpg" },
-      { id: "calabresa", nome: "Calabresa", preco: 12.0, descricao: "Hambúrguer, calabresa, queijo, presunto e salada", imagem: "foto-7.jpg" },
+      { id: "calabresa", nome: "Calabresa", preco: 12.0, descricao: "Hambúrguer, calabresa, queijo, presunto e salada", imagem: "calabresa.jpg" },
     ],
   },
   // TODO: preencher quando o cardápio chegar. Categorias sem itens não aparecem no site.
