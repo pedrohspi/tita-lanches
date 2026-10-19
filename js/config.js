@@ -3,11 +3,12 @@ const CONFIG = {
   nomeLoja: "Tita Lanches",
 
   // Número que recebe os pedidos: 55 + DDD + número, só dígitos.
-  // TODO: trocar pelo número real.
-  whatsapp: "5583900000000",
+  whatsapp: "558499322459",
 
-  // Taxa de entrega fixa (R$).
-  frete: 2.0,
+  // Taxa de entrega por bairro (R$). Bairro fora da lista fica "a combinar".
+  // Exemplo: { "Centro": 2.0, "Bancários": 4.0 } — maiúsculas e acentos não importam.
+  // TODO: preencher com os bairros atendidos.
+  taxasEntrega: {},
 
   // Dados do Pix exibidos no checkout.
   // TODO: confirmar chave e titular.

@@ -4,6 +4,20 @@ function formatarPreco(valor) {
   return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
+function normalizar(texto) {
+  return String(texto || "").normalize("NFD").replace(/[̀-ͯ]/g, "").trim().toLowerCase();
+}
+
+// Taxa do bairro, ou null quando o bairro não está na tabela (frete a combinar).
+function taxaEntrega(bairro) {
+  const alvo = normalizar(bairro);
+  if (!alvo) return null;
+  for (const [nome, valor] of Object.entries(CONFIG.taxasEntrega || {})) {
+    if (normalizar(nome) === alvo) return valor;
+  }
+  return null;
+}
+
 // item do carrinho: { nome, preco, quantidade, adicionais: [{ nome, preco, quantidade }], inclusa, observacao }
 function totalDoItem(item) {
   const extras = (item.adicionais || []).reduce((s, a) => s + a.preco * a.quantidade, 0);
@@ -26,11 +40,16 @@ function montarMensagem(carrinho, cliente) {
   });
 
   const subtotal = carrinho.reduce((s, item) => s + totalDoItem(item), 0);
-  const total = subtotal + CONFIG.frete;
+  const frete = taxaEntrega(cliente.bairro);
 
   linhas.push("", `Subtotal: ${formatarPreco(subtotal)}`);
-  linhas.push(`Entrega: ${formatarPreco(CONFIG.frete)}`);
-  linhas.push(`*Total: ${formatarPreco(total)}*`, "");
+  if (frete === null) {
+    linhas.push("Entrega: a combinar");
+    linhas.push(`*Total: ${formatarPreco(subtotal)} + entrega*`, "");
+  } else {
+    linhas.push(`Entrega: ${formatarPreco(frete)}`);
+    linhas.push(`*Total: ${formatarPreco(subtotal + frete)}*`, "");
+  }
 
   linhas.push("*Cliente*");
   linhas.push(`Nome: ${cliente.nome}`);
@@ -55,5 +74,8 @@ function montarMensagem(carrinho, cliente) {
 
 function enviarPedido(carrinho, cliente) {
   const texto = encodeURIComponent(montarMensagem(carrinho, cliente));
-  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${texto}`, "_blank");
+  const url = `https://wa.me/${CONFIG.whatsapp}?text=${texto}`;
+  // Alguns navegadores bloqueiam nova aba; nesse caso abre na mesma.
+  const aba = window.open(url, "_blank");
+  if (!aba) window.location.href = url;
 }

@@ -16,20 +16,25 @@ tita-lanches/
 ├── css/
 │   └── style.css         # estilos
 ├── js/
-│   ├── config.js         # número do WhatsApp, frete, Pix, formas de pagamento
+│   ├── config.js         # WhatsApp, taxas de entrega por bairro, Pix, formas de pagamento
 │   ├── cardapio.js       # categorias, lanches, preços e adicionais
 │   ├── whatsapp.js       # monta a mensagem e abre o WhatsApp
 │   └── app.js            # telas, carrinho e checkout
 └── assets/
     └── img/
         ├── logo.png
-        └── lanches/      # fotos dos lanches (nome = id do item .jpg)
+        ├── favicon.png
+        └── lanches/      # fotos dos lanches (padrao.svg = imagem provisória)
 ```
 
 ## Editando
 
-- **Preços e itens:** `js/cardapio.js`
-- **Número do WhatsApp, frete e Pix:** `js/config.js`
+- **Preços e itens:** `js/cardapio.js`. Categoria sem itens não aparece no site.
+- **Fotos:** coloque o arquivo em `assets/img/lanches/` e adicione `imagem: "barao.jpg"` ao item.
+- **Número do WhatsApp e Pix:** `js/config.js`
+- **Frete:** preencha `taxasEntrega` em `js/config.js` com o valor de cada bairro. Bairro fora da lista sai como "a combinar" na mensagem.
+
+O carrinho fica salvo no navegador do cliente, então ele não perde o pedido se fechar a página.
 
 ## Rodando localmente
 

@@ -1,6 +1,7 @@
 // Cardápio — preços conforme o cardápio impresso.
 // Para adicionar um item, copie um objeto e ajuste os campos.
-// "imagem" é relativa à pasta assets/img/lanches/.
+// Foto: coloque o arquivo em assets/img/lanches/ e adicione ao item, ex.: imagem: "barao.jpg".
+// Sem foto, o item usa a imagem padrão.
 
 const ADICIONAIS = [
   { id: "hamburguer", nome: "Hambúrguer", preco: 3.0 },
@@ -20,19 +21,20 @@ const CARDAPIO = [
     nome: "Lanches",
     aceitaAdicionais: true,
     itens: [
-      { id: "especial-da-casa", nome: "Especial da Casa", preco: 23.0, descricao: "2 hambúrgueres, frango desfiado, 2 ovos, bacon, calabresa, salsicha, queijo, presunto e salada", imagem: "especial-da-casa.jpg" },
-      { id: "barao", nome: "Barão", preco: 18.0, descricao: "Hambúrguer, frango desfiado, ovo, bacon, salsicha, queijo, presunto e salada", imagem: "barao.jpg" },
-      { id: "t-burguer", nome: "T-Burguer", preco: 16.0, descricao: "3 hambúrgueres, ovo, salsicha, queijo, presunto e salada", imagem: "t-burguer.jpg" },
-      { id: "calafrango", nome: "Calafrango", preco: 15.0, descricao: "Hambúrguer, frango desfiado, calabresa, ovo, queijo, presunto e salada", imagem: "calafrango.jpg" },
-      { id: "francatupiry", nome: "Francatupiry", preco: 14.0, descricao: "Hambúrguer, frango desfiado, catupiry, queijo, presunto e salada", imagem: "francatupiry.jpg" },
-      { id: "tita-lanches", nome: "Tita Lanches", preco: 13.0, descricao: "Hambúrguer, frango desfiado, ovo, queijo, presunto e salada", imagem: "tita-lanches.jpg" },
-      { id: "duplo", nome: "Duplo", preco: 13.0, descricao: "2 hambúrgueres, salsicha, queijo, presunto e salada", imagem: "duplo.jpg" },
-      { id: "bacon", nome: "Bacon", preco: 12.0, descricao: "Hambúrguer, bacon, queijo, presunto e salada", imagem: "bacon.jpg" },
-      { id: "calabresa", nome: "Calabresa", preco: 12.0, descricao: "Hambúrguer, calabresa, queijo, presunto e salada", imagem: "calabresa.jpg" },
+      { id: "especial-da-casa", nome: "Especial da Casa", preco: 23.0, descricao: "2 hambúrgueres, frango desfiado, 2 ovos, bacon, calabresa, salsicha, queijo, presunto e salada" },
+      { id: "barao", nome: "Barão", preco: 18.0, descricao: "Hambúrguer, frango desfiado, ovo, bacon, salsicha, queijo, presunto e salada" },
+      { id: "t-burguer", nome: "T-Burguer", preco: 16.0, descricao: "3 hambúrgueres, ovo, salsicha, queijo, presunto e salada" },
+      { id: "calafrango", nome: "Calafrango", preco: 15.0, descricao: "Hambúrguer, frango desfiado, calabresa, ovo, queijo, presunto e salada" },
+      { id: "francatupiry", nome: "Francatupiry", preco: 14.0, descricao: "Hambúrguer, frango desfiado, catupiry, queijo, presunto e salada" },
+      { id: "tita-lanches", nome: "Tita Lanches", preco: 13.0, descricao: "Hambúrguer, frango desfiado, ovo, queijo, presunto e salada" },
+      { id: "duplo", nome: "Duplo", preco: 13.0, descricao: "2 hambúrgueres, salsicha, queijo, presunto e salada" },
+      { id: "bacon", nome: "Bacon", preco: 12.0, descricao: "Hambúrguer, bacon, queijo, presunto e salada" },
+      { id: "calabresa", nome: "Calabresa", preco: 12.0, descricao: "Hambúrguer, calabresa, queijo, presunto e salada" },
     ],
   },
-  // TODO: preencher quando o cardápio dessas categorias chegar.
-  { id: "tapiocas", nome: "Tapiocas", aceitaAdicionais: false, itens: [] },
+  // TODO: preencher quando o cardápio chegar. Categorias sem itens não aparecem no site.
   { id: "cuscuzes", nome: "Cuscuzes", aceitaAdicionais: false, itens: [] },
-  { id: "sucos", nome: "Sucos", aceitaAdicionais: false, itens: [] },
 ];
+
+// Imagem usada quando a foto do lanche ainda não existe.
+const IMAGEM_PADRAO = "assets/img/lanches/padrao.svg";
