@@ -3,7 +3,7 @@ import styles from "./LimiteErro.module.css";
 
 // Se algo quebrar ao desenhar uma tela, mostra uma mensagem em vez de tela preta.
 export default class LimiteErro extends Component {
-  state = { erro: null };
+  state = { erro: null, componentes: "" };
 
   static getDerivedStateFromError(erro) {
     return { erro };
@@ -11,10 +11,18 @@ export default class LimiteErro extends Component {
 
   componentDidCatch(erro, info) {
     console.error("Erro na tela:", erro, info?.componentStack);
+    // Primeiros componentes da pilha ajudam a achar onde quebrou.
+    const componentes = (info?.componentStack || "")
+      .split("\n")
+      .map((l) => l.trim().replace(/^at\s+/, "").split(" ")[0])
+      .filter(Boolean)
+      .slice(0, 6)
+      .join(" < ");
+    this.setState({ componentes });
   }
 
   render() {
-    const { erro } = this.state;
+    const { erro, componentes } = this.state;
     if (!erro) return this.props.children;
 
     return (
@@ -28,6 +36,8 @@ export default class LimiteErro extends Component {
           <summary>Detalhes técnicos</summary>
           <pre>
             {String(erro?.message || erro)}
+            {componentes && `\n\nEm: ${componentes}`}
+            {erro?.stack && `\n\n${erro.stack.split("\n").slice(0, 4).join("\n")}`}
             {"\n\n"}
             {navigator.userAgent}
           </pre>
