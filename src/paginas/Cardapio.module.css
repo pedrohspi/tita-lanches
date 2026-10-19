@@ -1,0 +1,25 @@
+.abas {
+  display: flex;
+  gap: 28px;
+  background: var(--preto);
+  padding: 0 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  position: sticky;
+  top: var(--altura-topo);
+  z-index: 10;
+}
+.abas::-webkit-scrollbar { display: none; }
+
+.aba {
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 6px 0 10px;
+  white-space: nowrap;
+  border-bottom: 5px solid transparent;
+  border-radius: 2px;
+}
+
+.ativa { border-bottom-color: var(--laranja); }

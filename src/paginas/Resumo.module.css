@@ -1,0 +1,17 @@
+.entrega {
+  border: 1.5px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 18px 20px;
+}
+
+.entrega h2 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.45rem;
+  margin-bottom: 6px;
+}
+
+.entrega p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}

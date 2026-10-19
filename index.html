@@ -6,45 +6,13 @@
   <meta name="theme-color" content="#000000">
   <meta name="description" content="Tita Lanches — faça seu pedido e receba em casa. Pedido direto pelo WhatsApp.">
   <title>Tita Lanches</title>
-  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="topo">
-    <a href="#inicio" aria-label="Início">
-      <img src="assets/img/logo.png" alt="Tita Lanches" class="logo">
-    </a>
-  </header>
-
-  <main id="app"></main>
-
-  <div id="modal" class="modal" hidden></div>
-  <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
-
-  <nav class="menu-inferior" aria-label="Navegação">
-    <a href="#cardapio" data-aba="cardapio">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
-      <span>Cardápio</span>
-    </a>
-    <a href="#inicio" data-aba="inicio">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 12h3v8h5v-5h4v5h5v-8h3z" fill="currentColor"/></svg>
-      <span>Início</span>
-    </a>
-    <a href="#carrinho" data-aba="carrinho">
-      <span class="icone-carrinho">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h3l2.6 11.2a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 7H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19.5" r="1.6" fill="currentColor"/><circle cx="17" cy="19.5" r="1.6" fill="currentColor"/></svg>
-        <b class="badge" id="badge" hidden>0</b>
-      </span>
-      <span>Carrinho</span>
-    </a>
-  </nav>
-
-  <script src="js/config.js"></script>
-  <script src="js/cardapio.js"></script>
-  <script src="js/whatsapp.js"></script>
-  <script src="js/app.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

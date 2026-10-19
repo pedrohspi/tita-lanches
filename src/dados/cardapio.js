@@ -1,9 +1,9 @@
 // Cardápio — preços conforme o cardápio impresso.
 // Para adicionar um item, copie um objeto e ajuste os campos.
-// Foto: coloque o arquivo em assets/img/lanches/ e adicione ao item, ex.: imagem: "barao.jpg".
+// Foto: coloque o arquivo em public/img/lanches/ e adicione ao item, ex.: imagem: "barao.jpg".
 // Sem foto, o item usa a imagem padrão.
 
-const ADICIONAIS = [
+export const ADICIONAIS = [
   { id: "hamburguer", nome: "Hambúrguer", preco: 3.0 },
   { id: "salsicha", nome: "Salsicha", preco: 2.0 },
   { id: "ovo", nome: "Ovo", preco: 2.0 },
@@ -13,9 +13,9 @@ const ADICIONAIS = [
 ];
 
 // Todos os lanches já incluem catupiry ou cheddar (cliente escolhe).
-const OPCOES_INCLUSAS = ["Catupiry", "Cheddar"];
+export const OPCOES_INCLUSAS = ["Catupiry", "Cheddar"];
 
-const CARDAPIO = [
+export const CARDAPIO = [
   {
     id: "lanches",
     nome: "Lanches",
@@ -36,5 +36,12 @@ const CARDAPIO = [
   { id: "cuscuzes", nome: "Cuscuzes", aceitaAdicionais: false, itens: [] },
 ];
 
-// Imagem usada quando a foto do lanche ainda não existe.
-const IMAGEM_PADRAO = "assets/img/lanches/padrao.svg";
+export const categoriasVisiveis = () => CARDAPIO.filter((c) => c.itens.length > 0);
+
+export function acharItem(id) {
+  for (const categoria of CARDAPIO) {
+    const item = categoria.itens.find((i) => i.id === id);
+    if (item) return { item, categoria };
+  }
+  return null;
+}

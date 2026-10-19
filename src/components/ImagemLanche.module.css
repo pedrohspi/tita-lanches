@@ -1,0 +1,12 @@
+.foto {
+  width: 118px;
+  height: 118px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #2a211d;
+  flex-shrink: 0;
+}
+
+@media (max-width: 360px) {
+  .foto { width: 96px; height: 96px; }
+}

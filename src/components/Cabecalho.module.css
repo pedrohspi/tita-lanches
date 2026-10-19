@@ -1,0 +1,21 @@
+.cabecalho {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  padding: 20px 12px 4px;
+}
+
+.cabecalho h1 {
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.voltar {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+}
+.voltar svg { width: 30px; height: 30px; }

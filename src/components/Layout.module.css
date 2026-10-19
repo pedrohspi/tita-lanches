@@ -1,0 +1,5 @@
+.conteudo {
+  background: var(--branco);
+  min-height: calc(100dvh - var(--altura-topo-compacto));
+  padding-bottom: calc(var(--altura-menu) + env(safe-area-inset-bottom));
+}

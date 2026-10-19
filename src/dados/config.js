@@ -1,5 +1,5 @@
 // Configurações da loja — edite aqui sem mexer no resto do código.
-const CONFIG = {
+export const CONFIG = {
   nomeLoja: "Tita Lanches",
 
   // Número que recebe os pedidos: 55 + DDD + número, só dígitos.

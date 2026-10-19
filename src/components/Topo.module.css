@@ -1,0 +1,19 @@
+.topo {
+  background: var(--preto);
+  height: var(--altura-topo);
+  display: grid;
+  place-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.logo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.compacto { height: var(--altura-topo-compacto); }
+.compacto .logo { width: 54px; height: 54px; }

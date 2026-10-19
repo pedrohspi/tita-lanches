@@ -1,0 +1,35 @@
+/* Estilos compartilhados entre as páginas */
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 16px;
+}
+
+/* Espaço para a barra de total fixa no rodapé */
+.comRodape { padding-bottom: calc(var(--altura-rodape) + 24px); }
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.vazio {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  padding: 48px 16px;
+  color: var(--cinza);
+  text-align: center;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--laranja-escuro);
+  font-weight: 600;
+  font-size: 0.9rem;
+}

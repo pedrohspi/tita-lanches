@@ -1,0 +1,20 @@
+.obrigado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  padding: 48px 24px 40px;
+}
+
+.obrigado h1,
+.obrigado h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 900;
+  line-height: 1.25;
+}
+.obrigado h1 { font-size: 1.9rem; max-width: 12ch; }
+.obrigado h2 { font-size: 1.5rem; }
+.obrigado p { color: var(--cinza); font-size: 0.9rem; }
+
+.entregador { width: min(280px, 80%); }

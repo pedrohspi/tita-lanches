@@ -1,0 +1,52 @@
+/* Tita Lanches — cores e tipografia do layout do Figma */
+:root {
+  --laranja: #ffa500;
+  --laranja-escuro: #e69500;
+  --vermelho-marca: #bc1823;
+  --vermelho: #e60000;
+  --azul: #0a1fa8;
+  --azul-claro: #7dd8f2;
+  --preto: #000;
+  --branco: #fff;
+  --cinza: #555;
+  --borda: #4a4a4a;
+
+  --fonte-titulo: "Poppins", system-ui, sans-serif;
+  --fonte-texto: "Inter", system-ui, sans-serif;
+
+  --largura: 480px;
+  --altura-topo: 104px;
+  --altura-topo-compacto: 72px;
+  --altura-menu: 72px;
+  --altura-rodape: 76px;
+  --raio: 18px;
+  --foco: 3px solid rgba(255, 165, 0, 0.45);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--fonte-texto);
+  background: #1a1a1a;
+  color: var(--preto);
+  min-height: 100dvh;
+}
+
+body.travado { overflow: hidden; }
+
+a { color: inherit; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* O app ocupa no máximo a largura de um celular, centralizado no computador */
+.largura-app {
+  width: 100%;
+  max-width: var(--largura);
+  margin-inline: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

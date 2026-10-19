@@ -1,6 +1,6 @@
 # Tita Lanches
 
-Cardápio digital com pedido pelo WhatsApp. Site estático (HTML, CSS e JavaScript puro), sem backend e sem custo de servidor.
+Cardápio digital com pedido pelo WhatsApp. Feito em React + Vite, sem backend e sem custo de servidor.
 
 ## Como funciona
 
@@ -8,42 +8,47 @@ Cardápio digital com pedido pelo WhatsApp. Site estático (HTML, CSS e JavaScri
 2. Preenche endereço, dados e forma de pagamento.
 3. Ao finalizar, o WhatsApp abre com a mensagem do pedido pronta para enviar à loja.
 
+## Rodando localmente
+
+```bash
+npm install
+npm run dev
+```
+
 ## Estrutura
 
 ```
-tita-lanches/
-├── index.html            # página única do app
-├── css/
-│   └── style.css         # estilos
-├── js/
-│   ├── config.js         # WhatsApp, taxas de entrega por bairro, Pix, formas de pagamento
-│   ├── cardapio.js       # categorias, lanches, preços e adicionais
-│   ├── whatsapp.js       # monta a mensagem e abre o WhatsApp
-│   └── app.js            # telas, carrinho e checkout
-└── assets/
-    └── img/
-        ├── logo.png
-        ├── favicon.png
-        └── lanches/      # fotos dos lanches (padrao.svg = imagem provisória)
+src/
+├── main.jsx                  # ponto de entrada
+├── App.jsx                   # rotas
+├── global.css                # cores, fontes e estilos base
+├── dados/
+│   ├── config.js             # WhatsApp, taxas de entrega por bairro, Pix, formas de pagamento
+│   └── cardapio.js           # categorias, lanches, preços e adicionais
+├── contexto/
+│   ├── PedidoContext.jsx     # carrinho e dados do cliente (salvos no navegador)
+│   └── AvisoContext.jsx      # mensagens rápidas na tela
+├── hooks/
+│   └── useFormularioCliente.js
+├── utils/
+│   └── pedido.js             # preços, frete e mensagem do WhatsApp
+├── components/               # Botao, CardProduto, ModalAdicionais, Campo, RodapeTotal...
+└── paginas/                  # Inicio, Cardapio, Carrinho, Endereco, Dados, Resumo, Obrigado
+public/
+└── img/lanches/              # fotos dos lanches (padrao.svg = imagem provisória)
 ```
 
 ## Editando
 
-- **Preços e itens:** `js/cardapio.js`. Categoria sem itens não aparece no site.
-- **Fotos:** coloque o arquivo em `assets/img/lanches/` e adicione `imagem: "barao.jpg"` ao item.
-- **Número do WhatsApp e Pix:** `js/config.js`
-- **Frete:** preencha `taxasEntrega` em `js/config.js` com o valor de cada bairro. Bairro fora da lista sai como "a combinar" na mensagem.
-
-O carrinho fica salvo no navegador do cliente, então ele não perde o pedido se fechar a página.
-
-## Rodando localmente
-
-Basta abrir o `index.html` no navegador, ou:
-
-```bash
-npx serve .
-```
+- **Preços e itens:** `src/dados/cardapio.js`. Categoria sem itens não aparece no site.
+- **Fotos:** coloque o arquivo em `public/img/lanches/` e adicione `imagem: "barao.jpg"` ao item.
+- **Número do WhatsApp e Pix:** `src/dados/config.js`
+- **Frete:** preencha `taxasEntrega` em `src/dados/config.js` com o valor de cada bairro. Bairro fora da lista sai como "a combinar" na mensagem.
 
 ## Publicação
 
-GitHub Pages: Settings → Pages → Deploy from branch → `main` / root.
+O site é publicado automaticamente no GitHub Pages a cada push na `main` (`.github/workflows/deploy.yml`).
+
+Configuração única no GitHub: **Settings → Pages → Source: GitHub Actions**.
+
+Endereço: https://pedrohspi.github.io/tita-lanches/

@@ -1,0 +1,30 @@
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--laranja);
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+.botao:hover { background: var(--laranja-escuro); }
+.botao:active { transform: scale(0.97); }
+.botao svg { width: 20px; height: 20px; }
+
+.remover { background: var(--vermelho); }
+.remover:hover { background: #c00000; }
+
+.copiar { background: var(--azul); padding: 8px 16px; }
+.copiar:hover { background: #071680; }
+
+.grande {
+  font-size: 1.35rem;
+  padding: 14px 64px;
+  border-radius: 12px;
+}

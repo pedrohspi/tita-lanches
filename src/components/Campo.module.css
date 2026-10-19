@@ -1,0 +1,46 @@
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.campo > span {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.campo em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--cinza);
+  font-size: 0.85rem;
+}
+
+.campo input,
+.campo select {
+  font: 400 1rem var(--fonte-texto);
+  border: 2px solid var(--preto);
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: var(--branco);
+  color: var(--preto);
+  width: 100%;
+}
+
+.campo select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m5 9 7 7 7-7' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 20px;
+  padding-right: 44px;
+}
+
+.campo input::placeholder { color: #9a9a9a; }
+.campo input:focus,
+.campo select:focus { outline: var(--foco); outline-offset: 1px; }
+
+.erro input,
+.erro select { border-color: var(--vermelho); }
+.erro > span { color: var(--vermelho); }

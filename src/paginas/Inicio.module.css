@@ -1,0 +1,30 @@
+.inicio {
+  min-height: calc(100dvh - var(--altura-topo) - var(--altura-menu));
+  background: radial-gradient(ellipse at 50% 55%, #4a3b33 0%, #241c18 55%, #120e0c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 16px 32px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.chamada {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 8.5vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--laranja);
+  -webkit-text-stroke: 1.5px var(--branco);
+  paint-order: stroke fill;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.foto {
+  width: min(420px, 112%);
+  max-width: none;
+  margin: 24px 0;
+  border-radius: 24px;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+}
