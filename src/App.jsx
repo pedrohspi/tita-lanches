@@ -10,13 +10,13 @@ import Inicio from "./paginas/Inicio";
 import Obrigado from "./paginas/Obrigado";
 import Resumo from "./paginas/Resumo";
 
-// Não deixa entrar no checkout com o carrinho vazio.
+// Checkout exige carrinho com itens
 function RequerCarrinho() {
   const { carrinho } = usePedido();
   return carrinho.length > 0 ? <Outlet /> : <Navigate to="/carrinho" replace />;
 }
 
-// HashRouter (#/cardapio) funciona no GitHub Pages sem configuração de servidor.
+// HashRouter funciona no GitHub Pages sem configurar servidor
 export default function App() {
   return (
     <HashRouter>

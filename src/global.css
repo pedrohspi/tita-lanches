@@ -1,4 +1,4 @@
-/* Tita Lanches — cores e tipografia do layout do Figma */
+/* Cores e fontes do Figma */
 :root {
   --laranja: #ffa500;
   --laranja-escuro: #e69500;
@@ -41,10 +41,7 @@ a { color: inherit; }
 button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 img { display: block; max-width: 100%; }
 
-/*
- * Celular (até 899px): layout do Figma, coluna única com no máximo 480px.
- * Computador (900px+): layout largo, conteúdo centralizado em até 1200px.
- */
+/* Celular até 899px; computador a partir de 900px */
 .conteiner {
   width: 100%;
   margin-inline: auto;

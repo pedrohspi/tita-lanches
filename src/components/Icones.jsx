@@ -1,4 +1,4 @@
-// Ícones em SVG usados no app. Herdam a cor do texto (currentColor).
+// Cor herdada do texto (currentColor)
 
 export function IconeMenu(props) {
   return (

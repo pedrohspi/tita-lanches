@@ -2,9 +2,7 @@ import { useState } from "react";
 import { usePedido } from "../contexto/PedidoContext";
 import { useAviso } from "../contexto/AvisoContext";
 
-// Liga os campos ao cliente do pedido e valida os obrigatórios.
-// Uso: const { props, validar, marcarErro } = useFormularioCliente(["rua", "bairro"]);
-//      <Campo {...props("rua")} />
+// Liga campos ao cliente e valida obrigatórios. Uso: <Campo {...props("rua")} />
 export function useFormularioCliente(obrigatorios) {
   const { cliente, atualizarCliente } = usePedido();
   const avisar = useAviso();

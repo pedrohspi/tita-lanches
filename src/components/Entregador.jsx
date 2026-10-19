@@ -1,4 +1,3 @@
-// Ilustração do entregador na tela de agradecimento.
 export default function Entregador({ className }) {
   return (
     <svg className={className} viewBox="0 0 220 180" aria-hidden="true">

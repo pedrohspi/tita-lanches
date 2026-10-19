@@ -7,7 +7,6 @@ import { ADICIONAIS, OPCOES_INCLUSAS } from "../dados/cardapio";
 import { formatarPreco, totalDoItem } from "../utils/pedido";
 import styles from "./ModalAdicionais.module.css";
 
-// Modal aberto ao tocar em "Comprar": escolha inclusa, adicionais e observação.
 export default function ModalAdicionais({ item, aceitaAdicionais, onAdicionar, onFechar }) {
   const [adicionais, setAdicionais] = useState(() =>
     aceitaAdicionais ? ADICIONAIS.map((a) => ({ ...a, quantidade: 0 })) : [],
@@ -16,7 +15,7 @@ export default function ModalAdicionais({ item, aceitaAdicionais, onAdicionar, o
   const [observacao, setObservacao] = useState("");
   const caixa = useRef(null);
 
-  // Trava a rolagem da página, foca o modal e fecha com Esc.
+  // Trava a rolagem e fecha com Esc
   useEffect(() => {
     document.body.classList.add("travado");
     caixa.current?.focus();

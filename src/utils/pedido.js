@@ -22,7 +22,7 @@ export function mascaraTelefone(valor) {
   return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
 }
 
-// Item do carrinho: { nome, preco, quantidade, adicionais: [{ nome, preco, quantidade }], inclusa, observacao }
+// item: { preco, quantidade, adicionais: [{ preco, quantidade }] }
 export function totalDoItem(item) {
   const extras = (item.adicionais || []).reduce((s, a) => s + a.preco * a.quantidade, 0);
   return (item.preco + extras) * (item.quantidade || 1);
@@ -32,11 +32,12 @@ export function subtotal(carrinho) {
   return carrinho.reduce((s, item) => s + totalDoItem(item), 0);
 }
 
+// Sem acentos, minúsculo e sem espaços nas pontas
 function normalizar(texto) {
-  return String(texto || "").normalize("NFD").replace(/[̀-ͯ]/g, "").trim().toLowerCase();
+  return String(texto || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
 }
 
-// Taxa do bairro, ou null quando o bairro não está na tabela (frete a combinar).
+// null = frete a combinar
 export function taxaEntrega(bairro) {
   const alvo = normalizar(bairro);
   if (!alvo) return null;
@@ -94,7 +95,7 @@ export function montarMensagem(carrinho, cliente) {
 export function enviarPedido(carrinho, cliente) {
   const texto = encodeURIComponent(montarMensagem(carrinho, cliente));
   const url = `https://wa.me/${CONFIG.whatsapp}?text=${texto}`;
-  // Alguns navegadores bloqueiam nova aba; nesse caso abre na mesma.
+  // Se a nova aba for bloqueada, abre na mesma
   const aba = window.open(url, "_blank");
   if (!aba) window.location.href = url;
 }

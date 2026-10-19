@@ -17,7 +17,7 @@ export function AvisoProvider({ children }) {
     timer.current = setTimeout(() => setVisivel(false), 2200);
   }, []);
 
-  // Aviso de uma tela não aparece na próxima.
+  // Esconde ao trocar de tela
   useEffect(() => setVisivel(false), [pathname]);
 
   return (

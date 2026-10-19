@@ -1,8 +1,5 @@
-// Cardápio — preços conforme o cardápio impresso.
-// Para adicionar um item, copie um objeto e ajuste os campos.
-// Foto: coloque o arquivo em public/img/lanches/ e indique no item, ex.: imagem: "barao.jpg".
-// Fotos oficiais: Especial da Casa, Tita Lanches, Duplo e Calabresa. As demais usam a foto mais parecida.
-// Sem foto, o item usa a imagem padrão.
+// Preços do cardápio impresso.
+// Foto: arquivo em public/img/lanches/ + campo "imagem". Sem foto, usa a padrão.
 
 export const ADICIONAIS = [
   { id: "hamburguer", nome: "Hambúrguer", preco: 3.0 },
@@ -13,7 +10,7 @@ export const ADICIONAIS = [
   { id: "bacon", nome: "Bacon", preco: 3.0 },
 ];
 
-// Todos os lanches já incluem catupiry ou cheddar (cliente escolhe).
+// Incluso no lanche, cliente escolhe um
 export const OPCOES_INCLUSAS = ["Catupiry", "Cheddar"];
 
 export const CARDAPIO = [
@@ -33,7 +30,7 @@ export const CARDAPIO = [
       { id: "calabresa", nome: "Calabresa", preco: 12.0, descricao: "Hambúrguer, calabresa, queijo, presunto e salada", imagem: "calabresa.jpg" },
     ],
   },
-  // TODO: preencher quando o cardápio chegar. Categorias sem itens não aparecem no site.
+  // TODO: itens dos cuscuzes (categoria vazia não aparece)
   { id: "cuscuzes", nome: "Cuscuzes", aceitaAdicionais: false, itens: [] },
 ];
 

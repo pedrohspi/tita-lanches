@@ -1,4 +1,4 @@
-/* ---------- celular: barra fixa acima do menu ---------- */
+/* Celular: barra fixa */
 
 .rodape {
   position: fixed;
@@ -19,7 +19,7 @@
   z-index: 15;
 }
 
-/* Título e linhas de detalhe só aparecem no computador */
+/* Só no computador */
 .titulo,
 .linhas { display: none; }
 
@@ -42,7 +42,7 @@
   .botao { font-size: 1.1rem; padding: 10px 18px; }
 }
 
-/* ---------- computador: painel lateral ---------- */
+/* Computador: painel lateral */
 
 @media (min-width: 900px) {
   .rodape {

@@ -1,5 +1,4 @@
 .inicio {
-  /* Ocupa toda a altura livre entre o topo e o menu */
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -9,7 +8,7 @@
   background: #120e0c;
 }
 
-/* Camada 1: a foto do lanche ampliada e desfocada */
+/* Fundo desfocado */
 .inicio::before {
   content: "";
   position: absolute;
@@ -20,7 +19,7 @@
   transform: scale(1.1);
 }
 
-/* Camada 2: escurece e aquece o fundo para o texto e a foto se destacarem */
+/* Camada escura sobre o fundo */
 .inicio::after {
   content: "";
   position: absolute;
@@ -31,7 +30,7 @@
     linear-gradient(180deg, rgba(10, 7, 5, 0.82) 0%, rgba(10, 7, 5, 0.55) 45%, rgba(10, 7, 5, 0.88) 100%);
 }
 
-/* Celular: título, foto e botão empilhados */
+/* Celular: empilhado */
 .interno {
   flex: 1;
   display: grid;
@@ -75,7 +74,7 @@
 
 .acao { grid-area: acao; }
 
-/* Computador: texto à esquerda, foto à direita */
+/* Computador: duas colunas */
 @media (min-width: 900px) {
   .inicio::after {
     background:

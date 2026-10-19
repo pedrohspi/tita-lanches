@@ -28,12 +28,12 @@ export function PedidoProvider({ children }) {
   const [cliente, setCliente] = useState(inicial.cliente);
   const [ultimoPedido, setUltimoPedido] = useState(null);
 
-  // Salva no navegador para o cliente não perder o pedido ao fechar a página.
+  // Salva no navegador
   useEffect(() => {
     try {
       localStorage.setItem(CHAVE_STORAGE, JSON.stringify({ carrinho, cliente }));
     } catch {
-      /* navegador sem storage: segue só na memória */
+      /* sem storage: fica só na memória */
     }
   }, [carrinho, cliente]);
 
@@ -50,8 +50,7 @@ export function PedidoProvider({ children }) {
     setCliente((atual) => ({ ...atual, ...campos }));
   }, []);
 
-  // Envia o pedido. O carrinho é esvaziado pela tela de agradecimento
-  // (esvaziar aqui faria a proteção do checkout redirecionar antes da troca de tela).
+  // Carrinho é esvaziado na tela Obrigado; aqui o checkout redirecionaria antes
   const finalizar = useCallback(() => {
     const pedido = { carrinho, cliente };
     enviarPedido(pedido.carrinho, pedido.cliente);

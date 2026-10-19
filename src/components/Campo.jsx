@@ -1,6 +1,6 @@
 import styles from "./Campo.module.css";
 
-// Campo de formulário com rótulo. Use "opcoes" para virar um select.
+// Com "opcoes", vira select
 export default function Campo({ rotulo, opcional = false, erro = false, opcoes, placeholderSelect = "Selecione", ...props }) {
   return (
     <label className={`${styles.campo} ${erro ? styles.erro : ""}`}>
@@ -20,7 +20,7 @@ export default function Campo({ rotulo, opcional = false, erro = false, opcoes, 
   );
 }
 
-// Bloco de rótulo sem input, para conteúdos customizados (ex.: chave Pix).
+// Rótulo com conteúdo livre
 export function Grupo({ rotulo, children }) {
   return (
     <div className={styles.campo}>

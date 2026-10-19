@@ -5,7 +5,7 @@ import Navegacao from "./Navegacao";
 import Topo from "./Topo";
 import styles from "./Layout.module.css";
 
-// No celular, início e cardápio usam o logo grande; as demais telas, o compacto.
+// Telas com logo grande no celular
 const TOPO_GRANDE = ["/", "/cardapio"];
 
 export default function Layout() {
@@ -27,7 +27,7 @@ export default function Layout() {
           .filter(Boolean)
           .join(" ")}
       >
-        {/* key: ao trocar de tela, um erro anterior é descartado */}
+        {/* key limpa o erro ao trocar de tela */}
         <LimiteErro key={pathname}>
           <Outlet />
         </LimiteErro>

@@ -26,7 +26,7 @@
   object-fit: cover;
 }
 
-/* No celular o nome já está no logo; no computador aparece ao lado. */
+/* Nome ao lado do logo só no computador */
 .nome { display: none; }
 
 .compacto .interno { height: var(--altura-topo-compacto); }

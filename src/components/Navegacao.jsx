@@ -3,11 +3,10 @@ import { usePedido } from "../contexto/PedidoContext";
 import { IconeCarrinho, IconeCasa, IconeMenu } from "./Icones";
 import styles from "./Navegacao.module.css";
 
-// Telas do checkout destacam a aba "Carrinho".
+// Rotas do checkout ativam a aba Carrinho
 const ROTAS_CARRINHO = ["/carrinho", "/endereco", "/dados", "/resumo", "/obrigado"];
 
-// posicao "inferior": barra fixa embaixo (só no celular).
-// posicao "topo": menu dentro do cabeçalho (só no computador).
+// posicao: "inferior" (celular) ou "topo" (computador)
 export default function Navegacao({ posicao = "inferior" }) {
   const { carrinho } = usePedido();
   const { pathname } = useLocation();

@@ -3,19 +3,18 @@
   max-width: var(--largura-celular);
   margin-inline: auto;
   background: var(--branco);
-  /* Coluna flexível: a página pode crescer para ocupar a tela toda */
   display: flex;
   flex-direction: column;
   min-height: calc(100dvh - var(--altura-topo-compacto));
   padding-bottom: calc(var(--altura-menu) + env(safe-area-inset-bottom));
 }
 
-/* Telas com o logo grande no topo (início e cardápio) */
+/* Início e cardápio (logo grande) */
 .topoGrande {
   min-height: calc(100dvh - var(--altura-topo));
 }
 
-/* Na tela inicial o banner escuro vai até o menu, sem faixa branca */
+/* Evita faixa branca abaixo do banner */
 .inicio {
   background: #120e0c;
 }

@@ -1,7 +1,7 @@
 import { Component } from "react";
 import styles from "./LimiteErro.module.css";
 
-// Se algo quebrar ao desenhar uma tela, mostra uma mensagem em vez de tela preta.
+// Mostra mensagem de erro em vez de tela preta
 export default class LimiteErro extends Component {
   state = { erro: null, componentes: "" };
 
@@ -11,7 +11,6 @@ export default class LimiteErro extends Component {
 
   componentDidCatch(erro, info) {
     console.error("Erro na tela:", erro, info?.componentStack);
-    // Primeiros componentes da pilha ajudam a achar onde quebrou.
     const componentes = (info?.componentStack || "")
       .split("\n")
       .map((l) => l.trim().replace(/^at\s+/, "").split(" ")[0])

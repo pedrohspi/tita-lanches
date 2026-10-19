@@ -3,9 +3,7 @@ import { usePedido } from "../contexto/PedidoContext";
 import { formatarPreco, subtotal, taxaEntrega } from "../utils/pedido";
 import styles from "./RodapeTotal.module.css";
 
-// Total do pedido com o botão de avançar.
-// Celular: barra fixa no rodapé. Computador: painel lateral que acompanha a rolagem.
-// Com "comFrete", mostra a taxa do bairro (ou "a combinar").
+// Barra fixa no celular, painel lateral no computador
 export default function RodapeTotal({ comFrete = false, textoBotao, onAvancar }) {
   const { carrinho, cliente } = usePedido();
   const sub = subtotal(carrinho);
