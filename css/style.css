@@ -1,0 +1,20 @@
+/* Cores e tipografia do layout do Figma */
+:root {
+  --laranja: #ffa500;
+  --preto: #000000;
+  --branco: #ffffff;
+  --vermelho: #e60000;
+  --cinza-borda: #4a4a4a;
+  --fonte-titulo: "Poppins", sans-serif;
+  --fonte-texto: "Inter", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--fonte-texto);
+  background: var(--branco);
+  color: var(--preto);
+}
+
+/* Estilos das telas entram aqui. */
