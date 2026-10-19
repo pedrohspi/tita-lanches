@@ -4,7 +4,7 @@ import styles from "./Inicio.module.css";
 const BASE = import.meta.env.BASE_URL;
 // Foto de fundo (desfocada) e foto em destaque (nítida).
 const FUNDO = `${BASE}img/inicio.jpg`;
-const DESTAQUE = `${BASE}img/lanches/foto-4.jpg`;
+const DESTAQUE = `${BASE}img/lanches/especial-da-casa.jpg`;
 
 export default function Inicio() {
   return (

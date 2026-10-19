@@ -1,7 +1,7 @@
 // Cardápio — preços conforme o cardápio impresso.
 // Para adicionar um item, copie um objeto e ajuste os campos.
 // Foto: coloque o arquivo em public/img/lanches/ e indique no item, ex.: imagem: "barao.jpg".
-// TODO: as fotos atuais foram distribuídas provisoriamente; trocar pela foto certa de cada lanche.
+// Fotos oficiais: Especial da Casa, Tita Lanches e Calabresa. As demais usam a foto mais parecida.
 // Sem foto, o item usa a imagem padrão.
 
 export const ADICIONAIS = [
@@ -22,14 +22,14 @@ export const CARDAPIO = [
     nome: "Lanches",
     aceitaAdicionais: true,
     itens: [
-      { id: "especial-da-casa", nome: "Especial da Casa", preco: 23.0, descricao: "2 hambúrgueres, frango desfiado, 2 ovos, bacon, calabresa, salsicha, queijo, presunto e salada", imagem: "foto-4.jpg" },
+      { id: "especial-da-casa", nome: "Especial da Casa", preco: 23.0, descricao: "2 hambúrgueres, frango desfiado, 2 ovos, bacon, calabresa, salsicha, queijo, presunto e salada", imagem: "especial-da-casa.jpg" },
       { id: "barao", nome: "Barão", preco: 18.0, descricao: "Hambúrguer, frango desfiado, ovo, bacon, salsicha, queijo, presunto e salada", imagem: "foto-2.jpg" },
       { id: "t-burguer", nome: "T-Burguer", preco: 16.0, descricao: "3 hambúrgueres, ovo, salsicha, queijo, presunto e salada", imagem: "foto-3.jpg" },
-      { id: "calafrango", nome: "Calafrango", preco: 15.0, descricao: "Hambúrguer, frango desfiado, calabresa, ovo, queijo, presunto e salada", imagem: "foto-6.jpg" },
+      { id: "calafrango", nome: "Calafrango", preco: 15.0, descricao: "Hambúrguer, frango desfiado, calabresa, ovo, queijo, presunto e salada", imagem: "foto-1.jpg" },
       { id: "francatupiry", nome: "Francatupiry", preco: 14.0, descricao: "Hambúrguer, frango desfiado, catupiry, queijo, presunto e salada", imagem: "foto-2.jpg" },
-      { id: "tita-lanches", nome: "Tita Lanches", preco: 13.0, descricao: "Hambúrguer, frango desfiado, ovo, queijo, presunto e salada", imagem: "foto-7.jpg" },
+      { id: "tita-lanches", nome: "Tita Lanches", preco: 13.0, descricao: "Hambúrguer, frango desfiado, ovo, queijo, presunto e salada", imagem: "tita-lanches.jpg" },
       { id: "duplo", nome: "Duplo", preco: 13.0, descricao: "2 hambúrgueres, salsicha, queijo, presunto e salada", imagem: "foto-3.jpg" },
-      { id: "bacon", nome: "Bacon", preco: 12.0, descricao: "Hambúrguer, bacon, queijo, presunto e salada", imagem: "foto-1.jpg" },
+      { id: "bacon", nome: "Bacon", preco: 12.0, descricao: "Hambúrguer, bacon, queijo, presunto e salada", imagem: "foto-7.jpg" },
       { id: "calabresa", nome: "Calabresa", preco: 12.0, descricao: "Hambúrguer, calabresa, queijo, presunto e salada", imagem: "calabresa.jpg" },
     ],
   },
